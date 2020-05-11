@@ -1,2 +1,2 @@
-# covid-hack
-Best hack mobile development
+# Covid-19 Mobile Application
+
