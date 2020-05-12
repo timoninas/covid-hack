@@ -1,13 +1,12 @@
 //
-//  ViewController.swift
-//  covid
 //
-//  Created by Антон Тимонин on 10.05.2020.
-//  Copyright © 2020 Антон Тимонин. All rights reserved.
+//
+//
+//
+//
 //
 
 import UIKit
-
 
 class StatsViewController: UITableViewController {
     
@@ -15,7 +14,13 @@ class StatsViewController: UITableViewController {
     private var chooseCountry = ["All"]
     private var chosenCountry: String = "Russian Federation"
     private var countries: Timeseries?
+    private var refreshContrl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshJSONData(_:)), for: .valueChanged)
+        return refreshControl
+    }()
     
+    //MARK:-StoryBoard variables
     @IBOutlet weak var countryLabel: UILabel!
     
     @IBOutlet weak var totalConfirmed: UILabel!
@@ -32,11 +37,12 @@ class StatsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.tableView.refreshControl = refreshContrl
         
         self.navigationItem.title = "Covidec"
         downloadJSON()
     }
+    
     
     private func updateInfo() {
         self.chooseCountry = ["All"]
@@ -83,12 +89,12 @@ class StatsViewController: UITableViewController {
                 }
             }
         }
-        
-        //        print(self.chooseCountry)
     }
     
-    @IBAction func refreshButton(_ sender: Any) {
+    //MARK:- Refresh JSON Data
+    @objc func refreshJSONData(_ sender: UIRefreshControl) {
         downloadJSON()
+        sender.endRefreshing()
     }
     
     func downloadJSON() {
@@ -101,6 +107,8 @@ class StatsViewController: UITableViewController {
         }
     }
     
+    
+    //MARK:-TableView
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let countryVC = CountryTableViewController()
