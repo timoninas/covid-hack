@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UITableViewController {
+class StatsViewController: UITableViewController {
     
     private let networkManager: NetworkManagerDescription = NetworkManager.shared
     private var chooseCountry = ["All"]
@@ -31,6 +31,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         self.navigationItem.title = "Covidec"
         downloadJSON()
