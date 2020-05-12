@@ -14,9 +14,49 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        let windowScene = scene as! UIWindowScene
+        let window = UIWindow(windowScene: windowScene)
+        
+        // MARK:-MapVC
+        let mapVC = UIViewController()
+        // TabBarItem for MapVC
+        guard let mapDataImg = UIImage(named: "map")?.pngData() else { return }
+        let mapImg =  UIImage(data: mapDataImg, scale: 7.5)//
+        let mapBarItem = UITabBarItem(title: "", image: mapImg, selectedImage: nil)
+        mapVC.tabBarItem = mapBarItem
+        
+        
+        // MARK:-StatsVC
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let statsVC = storyboard.instantiateViewController(identifier: "ViewController")
+        let statNavController = UINavigationController(rootViewController: statsVC)
+        // TabBarItem for StatsVC
+        guard let statsDataImg = UIImage(named: "stats")?.pngData() else { return }
+        let statImg =  UIImage(data: statsDataImg, scale: 7.5)//
+        let statBarItem = UITabBarItem(title: "", image: statImg, selectedImage: nil)
+        statsVC.tabBarItem = statBarItem
+        
+        
+        // MARK:-TestVC
+        let testVC = TestViewController()
+//      let secondNav = UINavigationController(rootViewController: testVC)
+        guard let testDataImg = UIImage(named: "test")?.pngData() else { return }
+        // TabBarItem for TestVC
+        let testImg =  UIImage(data: testDataImg, scale: 7)//
+        let testBarItem = UITabBarItem(title: "", image: testImg, selectedImage: nil)
+        testVC.tabBarItem = testBarItem
+        
+        
+        // MARK:- Setup NavBar
+        let tabBar = UITabBarController()
+        tabBar.setViewControllers([mapVC, statNavController, testVC], animated: true)
+        tabBar.selectedViewController = statNavController
+        window.rootViewController = tabBar
+        
+        window.backgroundColor = .white
+        self.window = window
+        window.makeKeyAndVisible()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
