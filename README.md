@@ -2,7 +2,7 @@
 
 ## Презентация
 
-[Versus Covid Presentation](https://github.com/timoninas/covid-hack/blob/master/presentation/Covid%20Versus%20Presentation.pdf)
+[Versus Covid Presentation.pdf](https://github.com/timoninas/covid-hack/blob/master/presentation/Versus%20Covid%20Presentation.pdf)
 
 ## Состав команды
 
