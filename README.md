@@ -4,10 +4,6 @@
 
 [Versus Covid Presentation.pdf](https://github.com/timoninas/covid-hack/blob/master/presentation/Versus%20Covid%20Presentation.pdf)
 
-## Состав команды
-
-Олег Гибадулин
-
-Антон Тимонин
-
-Руслан Камалов
+<p align="center">
+  <img src="https://github.com/timoninas/covid-hack/blob/master/presentation/preview.png"/>
+</p>
