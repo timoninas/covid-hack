@@ -39,7 +39,7 @@ class StatsViewController: UITableViewController {
         
         self.tableView.refreshControl = refreshContrl
         
-        self.navigationItem.title = "Covidec"
+        self.navigationItem.title = "Versus Covid"
         downloadJSON()
     }
     

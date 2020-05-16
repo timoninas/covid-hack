@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let testVC = TestViewController()
         guard let testDataImg = UIImage(named: "test")?.pngData() else { return }
         // TabBarItem for TestVC
-        let testImg =  UIImage(data: testDataImg, scale: 0.9)
+        let testImg =  UIImage(data: testDataImg, scale: 6.7)
         let testBarItem = UITabBarItem(title: "", image: testImg, selectedImage: nil)
         testVC.tabBarItem = testBarItem
 
@@ -41,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let newsVC  = NewsViewController()
         guard let newsDataImg = UIImage(named: "news")?.pngData() else { return }
         // TabBarItem for NewsVC
-        let newsImg =  UIImage(data: newsDataImg)
+        let newsImg =  UIImage(data: newsDataImg, scale: 8.5)
         let newsBarItem = UITabBarItem(title: "", image: newsImg, selectedImage: nil)
         newsVC.tabBarItem = newsBarItem
         newsVC.view.backgroundColor = .white

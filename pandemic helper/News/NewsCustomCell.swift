@@ -11,7 +11,7 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
 
-    var indView = UIView()
+    var indView = UIImageView()
     var message : String?
     var mainImage : UIImage?
     var link : String?
@@ -71,19 +71,21 @@ class NewsTableViewCell: UITableViewCell {
         fatalError("init not implemented")
     }
     func setIndicator(prob : Double) {
-//        let manSize: CGFloat = 20
+        let manSize: CGFloat = 17.5
+        indView.image = UIImage(named: "good_new")
 //        indView.backgroundColor = .green
-//        if prob > 0.5 {
+        if prob > 0.5 {
+            indView.image = UIImage(named: "bad_new")
 //            indView.backgroundColor = .red
-//        }
-//        indView.frame.size = CGSize(width: manSize, height: manSize)
-//        indView.layer.masksToBounds = true
-//        indView.layer.cornerRadius =  manSize/2
-//        self.addSubview(indView)
-//        indView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-//        indView.heightAnchor.constraint(equalToConstant: 20).isActive = true
-//        indView.rightAnchor.constraint(equalTo: self.leftAnchor, constant:10).isActive = true
-//        indView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 10).isActive = true
+        }
+        indView.frame.size = CGSize(width: manSize, height: manSize)
+        indView.layer.masksToBounds = true
+        indView.layer.cornerRadius =  manSize/2
+        self.addSubview(indView)
+        indView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        indView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        indView.rightAnchor.constraint(equalTo: self.leftAnchor, constant:10).isActive = true
+        indView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 10).isActive = true
     }
     
     func addImage(urlStr : String) {
