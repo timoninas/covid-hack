@@ -1,0 +1,6 @@
+framework module Pods_pandemic_helper_pandemic_helperUITests {
+  umbrella header "Pods-pandemic helper-pandemic helperUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
