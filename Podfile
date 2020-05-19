@@ -9,6 +9,8 @@ target 'pandemic helper' do
 
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'AMScrollingNavbar'
+  use_frameworks!
 
   target 'pandemic helperTests' do
     inherit! :search_paths

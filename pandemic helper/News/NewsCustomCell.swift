@@ -21,7 +21,7 @@ class NewsTableViewCell: UITableViewCell {
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isSelectable = false
-        textView.font = UIFont(name:"AppleSDGothicNeo-Medium", size: 20.0)
+        textView.font = UIFont(name:"AppleSDGothicNeo-Medium", size: 17.0)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -89,7 +89,7 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     func addImage(urlStr : String) {
-        self.mainImageView.image = UIImage(named: "rbc")
+        self.mainImageView.image = UIImage(named: "magazine")
         guard let url = URL(string: urlStr) else {return }
         
           let task = URLSession.shared.dataTask(with: url) { (data, response, erorr) in

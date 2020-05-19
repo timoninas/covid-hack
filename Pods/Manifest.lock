@@ -158,6 +158,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - AMScrollingNavbar (5.6.1)
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
     - BoringSSL-GRPC/Interface (= 0.0.3)
@@ -230,12 +231,14 @@ PODS:
   - PromisesObjC (1.2.8)
 
 DEPENDENCIES:
+  - AMScrollingNavbar
   - Firebase/Firestore
   - FirebaseFirestoreSwift
 
 SPEC REPOS:
   trunk:
     - abseil
+    - AMScrollingNavbar
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAuthInterop
@@ -255,6 +258,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
+  AMScrollingNavbar: 602dd7a26efd0edb40d67ec20b5ee80b9f573bbb
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Firebase: 585ae467b3edda6a5444e788fda6888f024d8d6f
   FirebaseAuthInterop: a0f37ae05833af156e72028f648d313f7e7592e9
@@ -272,6 +276,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 4294cc822313e71c244c495fbb8e0f0717c40491
+PODFILE CHECKSUM: 66d3364d2bb822cec4937e9a57f3b4dd8388f799
 
 COCOAPODS: 1.9.1

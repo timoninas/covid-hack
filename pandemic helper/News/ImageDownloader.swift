@@ -9,12 +9,11 @@
 import Foundation
 import UIKit
 func downloadImage(urlStr : String) -> UIImage {
-    var image = UIImage(named: "rbc")
+    var image = UIImage(named: "magazine")
     
     guard let url = URL(string: urlStr) else {return image!}
     let task = URLSession.shared.dataTask(with: url) { (data, response, erorr) in
         guard let data = data else {return}
-        print("chicl = dskfm")
         image =  UIImage(data: data)
         }
     task.resume()

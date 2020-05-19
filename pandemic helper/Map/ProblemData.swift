@@ -10,6 +10,6 @@ import Foundation
 struct ProblemData {
     let problem : String?
     let phone : String?
-    let  longitude : Double?
-    let  latitude : Double?
+    let longitude : Double?
+    let latitude : Double?
 }

@@ -23,6 +23,7 @@ class MapViewController: UIViewController {
         listenFirebase()
     }
     
+    // MARK: Setup
     func setStackView() {
         let items = ["Карта помощи", "Карта заболеваемости"]
         customSC = UISegmentedControl(items: items)
@@ -36,6 +37,8 @@ class MapViewController: UIViewController {
         customSC.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         customSC.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         
+        customSC.addTarget(self, action: #selector(changeMap(sender:)), for: .valueChanged)
+        
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -43,19 +46,22 @@ class MapViewController: UIViewController {
         mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
-//    func changeMap(sender: UISegmentedControl) {
-//        switch sender.selectedSegmentIndex {
-//        case 1:
-//            self.view.backgroundColor = UIColor.greenColor()
-//            println("Green")
-//        case 2:
-//            self.view.backgroundColor = UIColor.blueColor()
-//            println("Blue")
-//        default:
-//            self.view.backgroundColor = UIColor.purpleColor()
-//            println("Purple")
-//        }
-//    }
+    @objc func changeMap(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            mapView.isUserInteractionEnabled = true
+            mapView.alpha = 1
+            print("Green")
+        case 1:
+            self.view.backgroundColor = UIColor.green
+            mapView.isUserInteractionEnabled = false
+            mapView.alpha = 0
+            print("Blue")
+        default:
+            self.view.backgroundColor = UIColor.purple
+            print("Purple")
+        }
+    }
     
     func createAnnotations(locations: [ProblemData]) {
         for location in locations {
@@ -69,6 +75,7 @@ class MapViewController: UIViewController {
         
     }
     
+    // MARK: Firebase
     func listenFirebase() {
         db.collection("Problems").addSnapshotListener { querySnapshot, error in
         

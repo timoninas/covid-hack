@@ -202,8 +202,8 @@
 		C430362F246EBDA2001EE933 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
-				C4303630246EBDA2001EE933 /* CountryTableViewController.swift */,
 				C4303631246EBDA2001EE933 /* StatsViewController.swift */,
+				C4303630246EBDA2001EE933 /* CountryTableViewController.swift */,
 				C4303632246EBDA2001EE933 /* Covid.swift */,
 			);
 			path = Stats;

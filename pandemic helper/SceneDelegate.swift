@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AMScrollingNavbar
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -40,6 +41,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // MARK:-NewsVC
         let newsVC  = NewsViewController()
         guard let newsDataImg = UIImage(named: "news")?.pngData() else { return }
+        let newsNavController = ScrollingNavigationController(rootViewController: newsVC)
+//        newsNavController.rootViewController = newsVC
         // TabBarItem for NewsVC
         let newsImg =  UIImage(data: newsDataImg, scale: 8.5)
         let newsBarItem = UITabBarItem(title: "", image: newsImg, selectedImage: nil)
@@ -57,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // MARK:- Setup NavBar
         let tabBar = UITabBarController()
-        tabBar.setViewControllers([testVC, statNavController, newsVC, mapVC], animated: true)
+        tabBar.setViewControllers([testVC, statNavController, newsNavController, mapVC], animated: true)
         tabBar.selectedViewController = statNavController
         window.rootViewController = tabBar
 

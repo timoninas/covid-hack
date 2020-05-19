@@ -9,7 +9,7 @@
         <!--Stats View Controller-->
         <scene sceneID="Mwe-IA-reD">
             <objects>
-                <tableViewController storyboardIdentifier="ViewController" id="TFQ-D7-Hpz" customClass="StatsViewController" customModule="covid" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ViewController" id="TFQ-D7-Hpz" customClass="StatsViewController" customModule="pandemic_helper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8EK-b0-3SD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="phy-pO-lkm">
-                                                    <rect key="frame" x="365" y="11" width="64" height="40"/>
+                                                    <rect key="frame" x="360" y="11" width="64" height="40"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Russian Federation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgQ-w9-SnI">
                                                     <rect key="frame" x="25" y="13" width="364" height="31"/>
@@ -39,7 +39,7 @@
                                                 <constraint firstItem="phy-pO-lkm" firstAttribute="top" secondItem="Fnp-sN-mxF" secondAttribute="top" constant="11" id="S9X-sR-shj"/>
                                                 <constraint firstAttribute="trailing" secondItem="QgQ-w9-SnI" secondAttribute="trailing" constant="25" id="cI7-IO-5Ha"/>
                                                 <constraint firstAttribute="bottom" secondItem="phy-pO-lkm" secondAttribute="bottom" constant="12" id="ivA-cs-B94"/>
-                                                <constraint firstAttribute="trailing" secondItem="phy-pO-lkm" secondAttribute="trailing" constant="-15" id="nzb-TL-GSN"/>
+                                                <constraint firstAttribute="trailing" secondItem="phy-pO-lkm" secondAttribute="trailing" constant="-10" id="nzb-TL-GSN"/>
                                                 <constraint firstItem="QgQ-w9-SnI" firstAttribute="top" secondItem="Fnp-sN-mxF" secondAttribute="top" constant="13" id="oRW-1S-cf6"/>
                                             </constraints>
                                         </tableViewCellContentView>
